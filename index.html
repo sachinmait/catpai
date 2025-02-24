@@ -5,59 +5,243 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CATPAI - AI Executive Program</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <style>
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-title {
+            animation: slideIn 1s ease-out;
+        }
+    </style>
 </head>
 <body class="bg-gray-50">
-    <!-- Previous HTML remains exactly the same until the script section -->
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold">MATES</div>
+            <button class="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition">
+                Enroll Now
+            </button>
+        </nav>
+        <div class="container mx-auto px-6 py-20">
+            <h1 class="hero-title text-5xl font-bold mb-4">
+                Certified Advanced Technology Professional in Artificial Intelligence
+            </h1>
+            <p class="text-xl mb-8 max-w-2xl">
+                Transform your future with AI. Step into the world of AI and discover how AI impacts lives and unlock your professional potential.
+            </p>
+            <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-50 transition">
+                Limited Seats Available - Apply Now
+            </button>
+        </div>
+    </header>
 
-    <!-- Hero Section through Footer remain exactly the same -->
-    
+    <!-- Key Features -->
+    <section class="py-20 container mx-auto px-6">
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="stagger-item bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Program Duration</h3>
+                <p>6 Weeks on every Saturday</p>
+                <p>10 AM to 1 PM (3-hour Session)</p>
+            </div>
+            <div class="stagger-item bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Delivery Mode</h3>
+                <p>Online (Live)</p>
+                <p>Interactive Sessions</p>
+            </div>
+            <div class="stagger-item bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Program Fee</h3>
+                <p>15,000 INR + GST</p>
+                <p>Study Material Included</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modules -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">Program Modules</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="stagger-item bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-4">Module 1: AI: Global Game Changer</h3>
+                    <ul class="space-y-2">
+                        <li>• Impact of AI on Life Systems</li>
+                        <li>• Potential Applications across Industries</li>
+                        <li>• Generative AI Applications</li>
+                    </ul>
+                </div>
+                <div class="stagger-item bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-4">Module 2: Large Language Models</h3>
+                    <ul class="space-y-2">
+                        <li>• Popular LLMs Comparison</li>
+                        <li>• Prompt Engineering</li>
+                        <li>• Context and Templates</li>
+                    </ul>
+                </div>
+                <div class="stagger-item bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-4">Module 3: Business Applications</h3>
+                    <ul class="space-y-2">
+                        <li>• Content Generation</li>
+                        <li>• Customer Service Automation</li>
+                        <li>• Business Analytics</li>
+                    </ul>
+                </div>
+                <div class="stagger-item bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-4">Module 4: Creative AI</h3>
+                    <ul class="space-y-2">
+                        <li>• AI in Design</li>
+                        <li>• Video Production</li>
+                        <li>• Education & Training</li>
+                    </ul>
+                </div>
+                <div class="stagger-item bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-4">Module 5: AI Integration</h3>
+                    <ul class="space-y-2">
+                        <li>• Custom Solutions</li>
+                        <li>• Data Science & NLP</li>
+                        <li>• Capstone Project</li>
+                    </ul>
+                </div>
+                <div class="stagger-item bg-white p-6 rounded-lg shadow hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-4">Module 6: Ethics & Law</h3>
+                    <ul class="space-y-2">
+                        <li>• AI Bias and Fairness</li>
+                        <li>• Regulatory Compliance</li>
+                        <li>• Project Demonstration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Enroll -->
+    <section class="py-20 container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-12 text-center fade-in">Who Should Enroll</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="stagger-item bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Industry Professionals</h3>
+                <p>Perfect for professionals from any industry looking to upskill in AI and integrate it into their business operations.</p>
+            </div>
+            <div class="stagger-item bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Entrepreneurs</h3>
+                <p>Ideal for business owners wanting to leverage AI across various domains including governance, content, healthcare, and more.</p>
+            </div>
+            <div class="stagger-item bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Graduates</h3>
+                <p>Suitable for recent graduates and postgraduates exploring AI-driven career opportunities.</p>
+            </div>
+            <div class="stagger-item bg-white p-8 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4">Non-Technical Enthusiasts</h3>
+                <p>Designed for those eager to grasp AI fundamentals without technical background.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About MATES -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-12 text-center fade-in">About MATES</h2>
+            <div class="fade-in bg-white p-8 rounded-lg shadow-lg max-w-3xl mx-auto">
+                <p class="mb-6">
+                    Maharaja Agrasen Technical Education Society (MATES) is a charitable trust comprising of well-known Educationists, Industrialists, Businessmen, Professionals and Philanthropists with an aim to promote quality education.
+                </p>
+                <p>
+                    With constant growth over 26 years, MATES runs three prestigious institutions: Maharaja Agrasen Institute of Technology, Maharaja Agrasen Institute of Management Studies, and Maharaja Agrasen Business School.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center fade-in">
+            <h2 class="text-3xl font-bold mb-8">Secure Your Future in AI</h2>
+            <p class="text-xl mb-8">Limited seats available. Start your journey towards a future-proof career today.</p>
+            <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-50 transition">
+                Enroll Now
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+                    <p>Email: catpai@mait.ac.in</p>
+                    <p>Phone: 98XXXXXXXX</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-blue-400">About Program</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Modules</a></li>
+                        <li><a href="#" class="hover:text-blue-400">Enrollment</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p>&copy; 2024 MATES. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script>
-        // Register ScrollTrigger plugin
-        gsap.registerPlugin(ScrollTrigger);
+        // Intersection Observer for fade-in elements
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
 
-        // Initial animation for header
-        gsap.from('header h1', {
-            opacity: 0,
-            y: 30,
-            duration: 1,
-            delay: 0.2
-        });
-
-        // Animate grid items on scroll
-        const gridSections = document.querySelectorAll('.grid');
-        gridSections.forEach(section => {
-            gsap.from(section.children, {
-                opacity: 0,
-                y: 20,
-                duration: 0.8,
-                stagger: 0.2,
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none reverse"
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in, .stagger-item').forEach((element, index) => {
+            if (element.classList.contains('stagger-item')) {
+                element.style.transitionDelay = `${index * 0.1}s`;
+            }
+            observer.observe(element);
         });
 
-        // Animate sections on scroll
-        gsap.utils.toArray('section').forEach(section => {
-            gsap.from(section, {
-                opacity: 0,
-                y: 30,
-                duration: 1,
-                scrollTrigger: {
-                    trigger: section,
-                    start: "top 80%",
-                    end: "top 20%",
-                    toggleActions: "play none none reverse"
-                }
-            });
-        });
-
-        // Smooth scroll functionality
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
