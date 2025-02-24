@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CATPAI - AI Executive Program</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Previous HTML remains exactly the same until the script section -->
+
+    <!-- Hero Section through Footer remain exactly the same -->
+    
+    <script>
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Initial animation for header
+        gsap.from('header h1', {
+            opacity: 0,
+            y: 30,
+            duration: 1,
+            delay: 0.2
+        });
+
+        // Animate grid items on scroll
+        const gridSections = document.querySelectorAll('.grid');
+        gridSections.forEach(section => {
+            gsap.from(section.children, {
+                opacity: 0,
+                y: 20,
+                duration: 0.8,
+                stagger: 0.2,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Animate sections on scroll
+        gsap.utils.toArray('section').forEach(section => {
+            gsap.from(section, {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "top 20%",
+                    toggleActions: "play none none reverse"
+                }
+            });
+        });
+
+        // Smooth scroll functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
